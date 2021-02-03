@@ -79,3 +79,17 @@ import 'antd/dist/antd.css'
 实现全局引入。
 
 胖哥视频里的初始项目是不存在_app.js文件的，需要新建，我的项目里已存在，只需要添加以上一条命令即可。
+
+**注意**我的项目里不允许在组件里导入css文件，需要在_app.js里全局导入。
+如下
+```
+import '../styles/globals.css'
+import 'antd/dist/antd.css'
+import '../styles/pages/comm.css'
+import '../styles/components/header.css'
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
+
+export default MyApp
+```
